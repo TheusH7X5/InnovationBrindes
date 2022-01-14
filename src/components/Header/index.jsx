@@ -16,15 +16,43 @@ import {
 import { RiSearchLine } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../services/hooks/contexts/CartContext";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Header = () => {
+const Header = (data) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const navigate = useNavigate();
   const { onChangeNameFilter, nameFilter } = useContext(CartContext);
+  const {productsFilter, setProductsFilter } = useState('');
+
+  const reqBody = {
+    nome_produto: data?.nome_produto,
+    codigo_produto: data?.codigo_produto,
+  };
+
+  useEffect(() => {
+    axios
+      .post(
+        "https://innovationbrindes-dev.com.br/api/innova-dinamica/produtos/listar",
+        reqBody,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((response) => {
+        setProductsFilter(response.data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -99,7 +127,7 @@ const Header = () => {
             borderColor="white"
           >
             <IconButton
-            ml={['-50px','0']}
+              ml={["-50px", "0"]}
               _active={{ bg: "#7fbc03" }}
               bg="#7fbc03"
               _hover={{ bg: "#7fbc03" }}

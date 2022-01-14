@@ -15,7 +15,6 @@ import UiNumber from "../UiNumber";
 
 const Cart = () => {
   const { products, nameFilter } = useContext(CartContext);
-  console.log(products);
 
   function getProductForName() {
     return products.filter((product) =>
@@ -26,7 +25,7 @@ const Cart = () => {
   const productForName = getProductForName();
 
   return (
-    <Box w="100%" align="center" mt="2em">
+    <Box w="100%" minH='100vh' align="center" mt="2em">
       <SimpleGrid h={["50%"]} w={["68%"]} columns={[2, 4]} spacing={[20, 2]}>
         {productForName.map((product) => (
           <Flex ml={["-6", "0"]} flexDir={["column"]}>

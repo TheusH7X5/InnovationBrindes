@@ -19,7 +19,6 @@ export const CartContextProvider = ({ children }) => {
       )
       .then((res) => {
         setProducts(res.data);
-        console.log(products);
       })
       .catch((err) => {
         console.log(err.message);
