@@ -66,6 +66,7 @@ const Login = () => {
             isClosable: true,
           });
           navigate("/Products");
+          window.location.reload()
         } else {
           toast({
             title: `Erro ao fazer Login!`,
