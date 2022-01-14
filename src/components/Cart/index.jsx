@@ -27,9 +27,9 @@ const Cart = () => {
 
   return (
     <Box w="100%" align="center" mt="2em">
-      <SimpleGrid h={["50%"]} w={["68%"]} columns={[2, 4]} spacing={[10, 2]}>
+      <SimpleGrid h={["50%"]} w={["68%"]} columns={[2, 4]} spacing={[20, 2]}>
         {productForName.map((product) => (
-          <Flex ml={["-2", "0"]} flexDir={["column"]}>
+          <Flex ml={["-6", "0"]} flexDir={["column"]}>
             <Text
               align={["left", "center"]}
               fontSize="sm"
@@ -60,7 +60,7 @@ const Cart = () => {
                   align="left"
                   src={"/box.png"}
                   alt="box"
-                  h="50px"
+                  h={["30px","50px"]}
                   w="auto"
                 />
                 <Flex mt="1" flexDir="column">
@@ -191,10 +191,11 @@ const Cart = () => {
             <Button
               mb={["0", "4"]}
               h="6"
-              w={["114%", "90%"]}
+              w={["120%", "90%"]}
               color="white"
               bgColor="#7fbc03"
               mt="5px"
+              borderRadius='0'
               _hover={{
                 backgroundColor: "white",
                 color: "#7fbc03",
