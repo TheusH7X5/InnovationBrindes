@@ -1,5 +1,8 @@
 <h1> Innovation Brindes </h1>
 
+![image](https://user-images.githubusercontent.com/67350243/149460332-fb9e6411-a699-499a-897a-525a128e329e.png)
+
+
 ## Sobre o projeto
 <h3> O projeto foi desenvolvido para um processo seletivo da empresa Innovation Brindes. </h3>
 
