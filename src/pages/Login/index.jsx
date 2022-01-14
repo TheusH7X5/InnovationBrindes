@@ -42,7 +42,7 @@ const Login = () => {
   });
 
   const onSubmit = async (data) => {
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     const reqBody = {
       email: data?.email,
       senha: data?.senha,
@@ -96,12 +96,11 @@ const Login = () => {
     <Flex
       bgImage="url('/banner.jpg')"
       bgSize="cover"
-      w="100vw"
-      h="100vh"
-      align="center"
-      justify="center"
+      w="auto"
+      minH={["50vh", "100vh"]}
+      align={["center"]}
+      justify={["start", "center"]}
       flexDirection="column"
-      opacity="10"
     >
       <Text
         fontSize="3xl"
@@ -112,10 +111,11 @@ const Login = () => {
         Bem-vindo a Innovation Brindes
       </Text>
       <Flex
+        mb="5em"
         as="form"
-        mt="20px"
-        w="480px"
-        h={300}
+        mt={["20px"]}
+        w={["350px", "480px"]}
+        h={[300]}
         bgColor="#7fbc03"
         borderRadius={8}
         flexDir="column"
