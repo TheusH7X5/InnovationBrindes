@@ -1,7 +1,7 @@
 <h1> Innovation Brindes </h1>
 
 <h3>Link do projeto https://innovation-brindes-l1sg30mz3-theush7x5.vercel.app/ </h3>
-<h2>Precisa dar atualizar a página depois de fazer o login para aparecer a tela de produtos</h2>
+<h5>Precisa atualizar a página depois de fazer o login para aparecer a tela de produtos</h5>
 
 ![innovation-login](https://user-images.githubusercontent.com/67350243/149460486-68d3e2ba-f1c7-4214-ad5a-bbeb2e34c7ae.png)
 ![innovation-login](https://user-images.githubusercontent.com/67350243/149460622-586241cf-2871-4139-8a6b-a8d328d63546.png)
