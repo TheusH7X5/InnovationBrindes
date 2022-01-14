@@ -6,18 +6,22 @@ import {
   Flex,
   HStack,
   Icon,
+  IconButton,
   Image,
   Input,
   Text,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { RiSearchLine } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useContext } from "react";
 import { CartContext } from "../../services/hooks/contexts/CartContext";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Header = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const { onChangeNameFilter, nameFilter } = useContext(CartContext);
 
@@ -87,7 +91,21 @@ const Header = () => {
             borderRightWidth={1}
             borderColor="white"
           >
-            <Flex cursor="pointer">
+              <IconButton
+              _active={{bg:'#7fbc03'}}
+                bg="#7fbc03"
+                _hover={{ bg: "#7fbc03" }}
+                icon={
+                  colorMode === "light" ? (
+                    <FaSun fontSize={["15", "20"]} color="white" />
+                  ) : (
+                    <FaMoon fontSize={["15", "20"]} color="white" />
+                  )
+                }
+                onClick={toggleColorMode}
+                command="⌘"
+              ></IconButton>
+            <Flex>
               <Icon as={MdEmail} fontSize={["25", "30"]} />
               <Badge
                 borderRadius="10px"
@@ -99,7 +117,7 @@ const Header = () => {
                 11
               </Badge>
             </Flex>
-            <Flex cursor="pointer">
+            <Flex>
               <Icon as={BsFillTelephoneFill} fontSize={["20", "25"]} />
               <Badge
                 borderRadius="10px"

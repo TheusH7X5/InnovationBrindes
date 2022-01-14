@@ -7,6 +7,7 @@ import {
   Text,
   Stack,
   Badge,
+  Spinner,
 } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { CartContext } from "../../services/hooks/contexts/CartContext";
@@ -26,16 +27,21 @@ const Cart = () => {
 
   return (
     <Box w="100%" align="center" mt="2em">
-      <SimpleGrid h={["450px"]} w={["68%"]} columns={[1, 4]} spacing={2}>
+      <SimpleGrid h={["50%"]} w={["68%"]} columns={[2, 4]} spacing={[10, 2]}>
         {productForName.map((product) => (
-          <Flex flexDir={["column"]}>
-            <Text h="20px">
+          <Flex ml={["-2", "0"]} flexDir={["column"]}>
+            <Text
+              align={["left", "center"]}
+              fontSize="sm"
+              mb={["2", "0"]}
+              h={["35px", "20px"]}
+            >
               <b>{product.nome}</b>
             </Text>
             <br />
             <Text>- {product.codigo} -</Text>
             <Box
-              w={["300px", "200px"]}
+              w={["150px", "200px"]}
               transform="scale(0.97)"
               transition="all ease 0.5s"
               cursor="pointer"
@@ -61,7 +67,7 @@ const Cart = () => {
                   <Text
                     color="gray"
                     fontSize="xs"
-                    align="center"
+                    align={["left", "center"]}
                     justify="center"
                   >
                     <strong>Com embalagem</strong>
@@ -183,9 +189,9 @@ const Cart = () => {
               </Text>
             </Box>
             <Button
-              mb={["6", "4"]}
+              mb={["0", "4"]}
               h="6"
-              w={["107%", "90%"]}
+              w={["114%", "90%"]}
               color="white"
               bgColor="#7fbc03"
               mt="5px"
@@ -200,6 +206,16 @@ const Cart = () => {
           </Flex>
         ))}
       </SimpleGrid>
+      {products.length <= 0 && (
+        <Spinner
+          mt="50px"
+          thickness="6px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="#7fbc03"
+          size="xl"
+        />
+      )}
     </Box>
   );
 };
