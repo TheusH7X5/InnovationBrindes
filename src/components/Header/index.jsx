@@ -19,10 +19,11 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { useContext } from "react";
 import { CartContext } from "../../services/hooks/contexts/CartContext";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-
+  const navigate = useNavigate();
   const { onChangeNameFilter, nameFilter } = useContext(CartContext);
 
   const isWideVersion = useBreakpointValue({
@@ -47,7 +48,13 @@ const Header = () => {
         w={["100%"]}
         maxWidth={["50%", "70%"]}
       >
-        <Image src="/logo.png" h={[9, 12]} alt="Innovation Brindes" />
+        <Image
+          onClick={() => navigate("/")}
+          src="/logo.png"
+          h={[9, 12]}
+          alt="Innovation Brindes"
+          cursor="pointer"
+        />
         {isWideVersion && (
           <Flex
             as="label"
@@ -91,20 +98,20 @@ const Header = () => {
             borderRightWidth={1}
             borderColor="white"
           >
-              <IconButton
-              _active={{bg:'#7fbc03'}}
-                bg="#7fbc03"
-                _hover={{ bg: "#7fbc03" }}
-                icon={
-                  colorMode === "light" ? (
-                    <FaSun fontSize={["15", "20"]} color="white" />
-                  ) : (
-                    <FaMoon fontSize={["15", "20"]} color="white" />
-                  )
-                }
-                onClick={toggleColorMode}
-                command="⌘"
-              ></IconButton>
+            <IconButton
+              _active={{ bg: "#7fbc03" }}
+              bg="#7fbc03"
+              _hover={{ bg: "#7fbc03" }}
+              icon={
+                colorMode === "light" ? (
+                  <FaSun fontSize={["15", "20"]} color="white" />
+                ) : (
+                  <FaMoon fontSize={["15", "20"]} color="white" />
+                )
+              }
+              onClick={toggleColorMode}
+              command="⌘"
+            ></IconButton>
             <Flex>
               <Icon as={MdEmail} fontSize={["25", "30"]} />
               <Badge
