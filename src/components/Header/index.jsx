@@ -93,13 +93,13 @@ const Header = () => {
             spacing={["2", "2.5"]}
             mx={["5", "4"]}
             pr={["5", "4"]}
-            py={["1", "1.5"]}
+            py={["0.3", "1.5"]}
             color="white"
             borderRightWidth={1}
             borderColor="white"
           >
             <IconButton
-            ml={['-10','0']}
+            ml={['-50px','0']}
               _active={{ bg: "#7fbc03" }}
               bg="#7fbc03"
               _hover={{ bg: "#7fbc03" }}
