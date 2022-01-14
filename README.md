@@ -9,7 +9,7 @@
 
 
 ## Sobre o projeto
-<h3> O projeto foi desenvolvido para um processo seletivo da empresa Innovation Brindes. </h3>
+<h3> O projeto foi desenvolvido para o processo seletivo da empresa Innovation Brindes. </h3>
 
 <h2> Tecnologias utilizadas: </h2> 
 
